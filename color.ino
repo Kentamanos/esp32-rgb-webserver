@@ -5,9 +5,7 @@
 #include <WebServer.h>
 #include <ESPmDNS.h>
 
-// Wifi credentials here...
-const char* ssid = "**********";
-const char* password = "**********";
+#include "wifisecrets.h"
 
 // the number of the LED pin
 const int blueLedPin = 2; // 16 corresponds to GPIO16
@@ -106,9 +104,6 @@ void handleRoot() {
 
 void handlePattern() {
   Serial.println("In POST /pattern");
-  // WiFiClient client = server.client();
-
-  // client.setTimeout(10000);
   Serial.println(server.args());
   Serial.println(server.argName(0));
   Serial.println(server.arg(0));
@@ -174,7 +169,7 @@ void handlePattern() {
 
 void initializeDefaultPattern()
 {
-  // Create a pattern that goes from "black" thru the rainbow and back to black
+  // Create a pattern that goes from "black" thru the "rainbow" and back to "black" over 7 seconds
   pattern[0] = {0, 0, 0, 0};
   pattern[1] = {0, 0, 0, 1000000L};
   pattern[2] = {255, 0, 0, 2000000L};
