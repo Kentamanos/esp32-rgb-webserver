@@ -8,12 +8,12 @@
 #include "wifisecrets.h"
 
 // the number of the LED pin
-const int blueLedPin = 2; // 16 corresponds to GPIO16
+const int blueLedPin = 2;
 const int redLedPin = 0;
 const int greenLedPin = 4;
 
 // setting PWM properties
-const int freq = 50000;
+const int freq = 5000;
 const int blueLedChannel = 10;
 const int redLedChannel = 11;
 const int greenLedChannel = 12;
@@ -274,7 +274,7 @@ void loop()
 {
   // Update colors
   unsigned long currentTime = micros() % pattern[statesInPattern - 1].time;
-  updateColorsWithPattern(currentTime, true);
+  updateColorsWithPattern(currentTime, false);
 
   // Check for REST activity
   server.handleClient();
