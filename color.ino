@@ -169,7 +169,7 @@ void handlePattern() {
 
 void initializeDefaultPattern()
 {
-  // Create a pattern that goes from "black" thru the "rainbow" and back to "black" over 7 seconds
+  // Create a pattern that goes from "black" thru the "rainbow" and back to "black" over 8 seconds
   pattern[0] = {0, 0, 0, 0};
   pattern[1] = {0, 0, 0, 1000000L};
   pattern[2] = {255, 0, 0, 2000000L};
@@ -177,9 +177,10 @@ void initializeDefaultPattern()
   pattern[4] = {0, 255, 0, 4000000L};
   pattern[5] = {0, 255, 255, 5000000L};
   pattern[6] = {0, 0, 255, 6000000L};
-  pattern[7] = {0, 0, 0, 7000000L};
+  pattern[7] = {255, 0, 255, 7000000L};
+  pattern[8] = {0, 0, 0, 8000000L};
 
-  statesInPattern = 8;
+  statesInPattern = 9;
 }
 
 void setup()
